@@ -74,3 +74,15 @@ Remaining turns : 3"""
     )
 
 
+def test_update_status_no_guesses():
+    secret_word = "helicopter"
+    guesses = []
+    turns_remaining = 8
+    ret = hangman.update_status(secret_word, guesses, turns_remaining)
+    assert (
+        ret
+        == """Secret word:----------
+Guesses : 
+Remaining turns : 8"""
+    )
+
