@@ -12,3 +12,13 @@ def random_word(wordfile="/usr/share/dict/words"):
             if i.isalpha() and i.islower() and len(i) >=5:
                 words.append(i)
     return random.choice(words)
+
+
+def maskword(secret_word, guesses):
+    op = []
+    for i in secret_word:
+        if i in guesses:
+            op.append(i)
+        else:
+            op.append("-")
+    return "".join(op)
