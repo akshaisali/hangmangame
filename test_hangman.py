@@ -24,3 +24,9 @@ def test_random_word_min_length():
         word = hangman.random_word("/tmp/words.txt")
         assert word == "elephant"
     os.unlink("/tmp/words.txt")
+
+def test_maskword_single_letter():
+    secret_word = "elephant"
+    guesses = ["e"]
+    ret =hangman.maskword(secret_word, guesses)
+    assert ret == "e-e-----"
