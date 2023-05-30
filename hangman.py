@@ -56,9 +56,10 @@ def game_over(secret_word, guesses, turns_remaining):
 
 def main():
     secret_word = random_word()
+
     
-    guesses = []
     turns_remaining = 8
+    guesses = []
     while True:
         print(update_status(secret_word, guesses, turns_remaining))
         guess = input("Enter a letter ")
