@@ -1,8 +1,8 @@
 import random
 
-guesses = 0
-correct = 1
-wrong= 2
+ALREADY_GUESSED = 0
+CORRECT = 1
+WRONG = 2
 
 
 def random_word(wordfile="/usr/share/dict/words"):
@@ -35,13 +35,13 @@ Remaining turns : {turns_remaining}"""
 
 def check(secret_word, guesses, turns_remaining, new_guess):
     if new_guess in guesses:
-        return guesses, turns_remaining
+        return ALREADY_GUESSED, turns_remaining
     else:
         guesses.append(new_guess)
         if new_guess in secret_word:
-            return correct, turns_remaining
+            return CORRECT, turns_remaining
         else:
-            return wrong, turns_remaining - 1
+            return WRONG, turns_remaining - 1
 
 
 def game_over(secret_word, guesses, turns_remaining):
@@ -77,3 +77,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
