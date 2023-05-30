@@ -61,3 +61,16 @@ def test_maskword_noguesses():
     assert ret == "--------"
 
 
+def test_update_status_input():
+    secret_word = "helicopter"
+    guesses = ["c", "o", "x"]
+    turns_remaining = 3
+    ret = hangman.update_status(secret_word, guesses, turns_remaining)
+    assert (
+        ret
+        == """Secret word:----co----
+Guesses : c o x
+Remaining turns : 3"""
+    )
+
+
