@@ -134,4 +134,13 @@ def test_game_over_not_over():
     assert message == None
 
 
+def test_game_over_won():
+    secret_word = "rabbit"
+    guesses = ["r", "a", "b", "i", "t"]
+    turns_remaining = 5
+    finished, message = hangman.game_over(secret_word, guesses, turns_remaining)
+    assert finished
+    assert message == "You guessed it! The word was rabbit"
+
+
 
