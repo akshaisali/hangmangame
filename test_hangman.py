@@ -47,5 +47,10 @@ def test_maskword_none():
     ret = hangman.maskword(secret_word, guesses)
     assert ret == "--------"
 
+def test_maskword_complete():
+    secret_word = "elephant"
+    guesses = ["e", "l", "p", "h", "a", "n", "t", "x", "q"]
+    ret = hangman.maskword(secret_word, guesses)
+    assert ret == "elephant"
 
 
